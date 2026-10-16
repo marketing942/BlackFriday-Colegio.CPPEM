@@ -1,5 +1,5 @@
 /* =========================================================
-   COLÉGIO CPPEM · BLACK FRIDAY — live 14/11 às 19h45 no YouTube
+   COLÉGIO CPPEM · BLACK FRIDAY — evento presencial 14/11 às 7h30, na sede
 
    Duas metades:
    1. A CENA — abertura (vidro, raios, explosão), fogo e raios ambientes,
@@ -17,7 +17,7 @@
   var CONFIG = {
     /* Início da live. A contagem, o pavio, a agenda e a troca de fase
        saem todos daqui. */
-    inicio: "2026-11-14T19:45:00-03:00",
+    inicio: "2026-11-14T07:30:00-03:00",
 
     /* Por quanto tempo depois do início a página mostra "ao vivo agora".
        Passado isso, ela vira "a live acabou" e aponta para a gravação. */
@@ -137,9 +137,9 @@
   (function agenda() {
     function utc(ms) { return new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); }
 
-    var titulo = "Black Friday Colégio CPPEM · ao vivo no YouTube";
-    var link   = CONFIG.youtubeLive || CONFIG.youtubeCanal;
-    var desc   = "A live com as condições da matrícula 2027 do Colégio CPPEM. Assista em " + link;
+    var titulo = "Black Friday Colégio CPPEM · presencial na sede";
+    var link   = "https://maps.app.goo.gl/odR2oX7seDM6c2yY6";
+    var desc   = "A melhor condição do ano para a matrícula 2027, revelada na sede do Colégio CPPEM. Como chegar: " + link;
     var fimAgenda = INICIO + 2 * 3600e3;
 
     var google = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
@@ -222,8 +222,8 @@
 
     var resumo =
       faseAtual === "antes"   ? "faltam " + Number(v.d) + "d " + v.h + ":" + v.m + ":" + v.s :
-      faseAtual === "ao-vivo" ? "ao vivo agora no YouTube" :
-                                "live encerrada";
+      faseAtual === "ao-vivo" ? "acontecendo agora na sede" :
+                                "evento encerrado";
     if (dockTempo) dockTempo.textContent = resumo;
     if (formTempo) formTempo.textContent = resumo;
 
@@ -975,6 +975,9 @@
       /* preventScroll: o foco não pode brigar com a rolagem suave */
       setTimeout(function () { if (nomeInput) nomeInput.focus({ preventScroll: true }); }, reduced ? 0 : 650);
     });
+  });
+  $$("[data-mapa]").forEach(function (a) {
+    a.addEventListener("click", function () { track("mapa_click", { cta: a.getAttribute("data-cta") || "" }); });
   });
   $$("[data-youtube-live], [data-youtube-canal]").forEach(function (a) {
     a.addEventListener("click", function () { track("youtube_click", { cta: a.getAttribute("data-cta") || "" }); });

@@ -1,5 +1,5 @@
 /* =========================================================
-   COLÉGIO CPPEM · BLACK FRIDAY — live 14/11 às 19h45 no YouTube
+   COLÉGIO CPPEM · BLACK FRIDAY — evento presencial 14/11 às 7h30, na sede
    hero (abertura + lista VIP) > fitas > prova (bilhetes)
    > lacrados > pavio > rodapé
 
@@ -1049,10 +1049,94 @@ html.fase-bordado .leao__halo { animation: halo-acende 1.4s var(--ease) .9s both
 }
 
 /* 1A · no celular a etiqueta "Ao vivo no YouTube" sai do hero e a barra
-   do topo assume a função: "Ao vivo no YouTube · Seg · 09/11 · 19h45" */
+   do topo assume a função: "Presencial na sede · Sáb · 14/11 às 7h30" */
 .topbar__yt { display: none; }
 @media (max-width: 700px) {
   .hero .alerta { display: none; }
   .topbar__nome { display: none; }
   .topbar__yt { display: inline; }
+}
+
+/* =========================================================
+   EVENTO PRESENCIAL — o presente e o local
+   ========================================================= */
+.presente { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 4rem; align-items: center; }
+.presente__texto p { margin: 1rem 0 1.6rem; color: var(--muted); font-size: 1.05rem; max-width: 34rem; }
+.presente__texto p b { color: var(--text); }
+
+/* a caixa: corpo azul-noite com fita dourada em cruz e tampa com laço */
+.presente__caixa { position: relative; width: min(100%, 340px); aspect-ratio: 1 / 1.02; margin: 0 auto; }
+.presente__corpo {
+  position: absolute; left: 6%; right: 6%; bottom: 0; height: 66%; border-radius: 6px 6px 14px 14px;
+  background:
+    linear-gradient(90deg, transparent 43%, #ffd36b 43%, #f2b01e 50%, #c98f0c 57%, transparent 57%),
+    linear-gradient(160deg, #15357c, #0a2356 55%, #061430);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .55), inset 0 -12px 24px rgba(0, 0, 0, .35);
+}
+.presente__tampa {
+  position: absolute; left: 0; right: 0; top: 22%; height: 18%; z-index: 2; border-radius: 8px;
+  background:
+    linear-gradient(90deg, transparent 42%, #ffe39a 42%, #f2b01e 50%, #c98f0c 58%, transparent 58%),
+    linear-gradient(180deg, #1c4396, #0d2a68);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, .45);
+  transform-origin: 50% 100%;
+  animation: tampa-balanca 4.5s ease-in-out infinite;
+}
+/* laço: duas alças douradas em cima da tampa */
+.presente__laco { position: absolute; left: 50%; bottom: 92%; width: 46%; height: 70%; transform: translateX(-50%); }
+.presente__laco b {
+  position: absolute; bottom: 0; width: 48%; height: 100%; border-radius: 60% 60% 10% 60%;
+  border: 9px solid #f2b01e; border-color: #ffd36b #c98f0c #c98f0c #ffd36b;
+}
+.presente__laco b:first-child { left: 2%; transform: rotate(-22deg); }
+.presente__laco b + b { right: 2%; transform: scaleX(-1) rotate(-22deg); }
+.presente__laco::after {
+  content: ""; position: absolute; left: 50%; bottom: -6px; width: 26px; height: 22px; transform: translateX(-50%);
+  border-radius: 8px; background: radial-gradient(circle at 40% 35%, #ffe39a, #f2b01e 55%, #a06c00);
+}
+@keyframes tampa-balanca {
+  0%, 78%, 100% { transform: none; }
+  82% { transform: translateY(-10px) rotate(-3deg); }
+  86% { transform: translateY(-4px) rotate(2.5deg); }
+  90% { transform: translateY(-8px) rotate(-1.5deg); }
+  94% { transform: none; }
+}
+/* luz escapando pela fresta da tampa */
+.presente__brilho {
+  position: absolute; left: 10%; right: 10%; top: 34%; height: 12%; z-index: 1; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 220, 140, .85), rgba(242, 176, 30, .25), transparent);
+  filter: blur(6px); opacity: 0;
+  animation: brilho-fresta 4.5s ease-in-out infinite;
+}
+@keyframes brilho-fresta { 0%, 78%, 100% { opacity: 0; } 82%, 90% { opacity: 1; } 94% { opacity: 0; } }
+.presente__caixa:hover .presente__tampa { animation: none; transform: translateY(-16px) rotate(-4deg); transition: transform .35s var(--mola); }
+.presente__caixa:hover .presente__brilho { animation: none; opacity: 1; transition: opacity .3s; }
+.presente__etiqueta {
+  position: absolute; right: -4%; bottom: 14%; padding: .55rem .8rem; border-radius: 6px;
+  background: #fbf6e9; color: #0a2356; font-size: .72rem; font-weight: 700; line-height: 1.25; text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .4); transform: rotate(8deg);
+}
+.presente__etiqueta b { font-family: var(--display); font-weight: 900; font-size: .95rem; }
+.presente__etiqueta::before {   /* o furinho e o barbante da etiqueta */
+  content: ""; position: absolute; left: -26px; top: 50%; width: 30px; height: 1.5px; background: #ffd36b;
+}
+
+/* o local do evento, com link para o Maps */
+.local {
+  display: inline-flex; align-items: center; gap: .9rem; padding: .8rem 1.2rem .8rem .8rem; border-radius: 16px;
+  border: 1px solid rgba(242, 176, 30, .35); background: rgba(255, 255, 255, .04); text-decoration: none;
+  transition: border-color .2s, background .2s;
+}
+.local:hover { border-color: rgba(242, 176, 30, .7); background: rgba(242, 176, 30, .08); }
+.local__ico { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(160deg, var(--gold-hot), var(--gold)); }
+.local__ico svg { width: 22px; height: 22px; fill: none; stroke: #1b1400; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.local__txt { display: flex; flex-direction: column; line-height: 1.3; text-align: left; }
+.local__txt b { font-family: var(--display); font-weight: 900; }
+.local__txt small { color: var(--gold-hot); font-weight: 700; font-size: .8rem; }
+
+@media (max-width: 980px) {
+  .presente { grid-template-columns: 1fr; gap: 2.4rem; text-align: center; }
+  .presente__texto { display: flex; flex-direction: column; align-items: center; }
+  .presente__texto .section__title--left { text-align: center; }
+  .presente__caixa { width: min(70vw, 260px); }
 }

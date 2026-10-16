@@ -1,6 +1,6 @@
 # Black Friday Colégio CPPEM — página de captura
 
-Landing da live de Black Friday do **Colégio CPPEM**: **sábado, 14/11, às 19h45, ao vivo no YouTube**.
+Landing da Black Friday do **Colégio CPPEM**: evento **presencial**, **sábado, 14/11, às 7h30, na sede atual do Colégio** ([mapa](https://maps.app.goo.gl/odR2oX7seDM6c2yY6)).
 A página capta a **lista VIP** (responsável, WhatsApp, e-mail) e leva o inscrito ao grupo do WhatsApp.
 
 Mesma base técnica da Black Friday de concursos (`../blackFridayCPPEM`), com a identidade do Colégio:
@@ -11,9 +11,9 @@ brasão no centro do hero. Tom escolar: sem os efeitos táticos da página de co
 
 | O quê | Onde |
 |---|---|
-| Canal do YouTube (hoje `@cppemconcursos`) e vídeo agendado da live | `CONFIG.youtubeCanal` / `CONFIG.youtubeLive` + links `youtube.com` no `index.html` |
+| Link do local (Google Maps) | links `data-mapa` no `index.html` e `agenda()` no `script.js` |
 | Aba da planilha (hoje `BLACK_FRIDAY_COLEGIO`, criada sozinha pelo Apps Script) | `CONFIG.sheetAba` |
-| Itens dos cards "lacrados" (Matrícula, Mensalidades, Material, Surpresa) | seção `#lacrados` |
+| Texto da caixa-presente (a surpresa do evento) | seção `#presente` |
 | `og:image` 1200×630 com URL absoluta | `<head>` do `index.html` |
 
 ## Comportamento
