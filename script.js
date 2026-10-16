@@ -32,10 +32,9 @@
     sheetBase: "https://script.google.com/macros/s/AKfycbxdFplWVSfhTjvyIA7HIWb645xRjGNhBVhTdTf5UMjo0lSpW_A_jCuys0qB4uImKXPQ/exec",
     sheetAba:  "BLACK_FRIDAY_COLEGIO",
 
-    /* ⚠ PREENCHER: convite do grupo da Black (https://chat.whatsapp.com/...).
-       Vazio, o inscrito é levado para o canal do YouTube — o lead não se
-       perde, mas ele também não entra em grupo nenhum. */
-    grupoWhatsApp: "",
+    /* Para onde o inscrito vai depois do formulário: o link curto do grupo
+       da Black no WhatsApp. Vazio, ele seria levado para o canal do YouTube. */
+    grupoWhatsApp: "https://links.cppem.com.br/grupo-bf26-colegio",
 
     /* Opcional: o link do vídeo agendado da live no YouTube. Preenchido, o
        botão "Inscrever no canal" vira "Ativar lembrete" e aponta para ele,

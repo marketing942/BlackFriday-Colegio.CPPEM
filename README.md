@@ -11,7 +11,6 @@ brasão no centro do hero. Tom escolar: sem os efeitos táticos da página de co
 
 | O quê | Onde |
 |---|---|
-| ⚠ **Link do grupo do WhatsApp** — vazio, o inscrito vai para o canal do YouTube | `CONFIG.grupoWhatsApp` no `script.js` |
 | Canal do YouTube (hoje `@cppemconcursos`) e vídeo agendado da live | `CONFIG.youtubeCanal` / `CONFIG.youtubeLive` + links `youtube.com` no `index.html` |
 | Aba da planilha (hoje `BLACK_FRIDAY_COLEGIO`, criada sozinha pelo Apps Script) | `CONFIG.sheetAba` |
 | Itens dos cards "lacrados" (Matrícula, Mensalidades, Material, Surpresa) | seção `#lacrados` |
