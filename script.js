@@ -856,18 +856,14 @@
   /* =========================================================
      A ABERTURA
 
-     Linha do tempo (ms):
-        150  BLACK: as letras caem uma a uma (55ms entre elas)
-        700  FRIDAY: as letras sobem e o risco de luz passa embaixo
-       1300  o leão aparece por um círculo de luz
-       1650  o resto do hero entra em cascata
+     Linha do tempo: ver o comentário logo acima de abertura().
      ========================================================= */
   var bfBlack  = document.getElementById("bfBlack");
   var bfFriday = document.getElementById("bfFriday");
   /* o centro do BRASÃO (era o leão na página de concursos), não do bloco da marca (que inclui a assinatura) */
   var bfMarca  = document.querySelector(".bf__leao") || document.getElementById("bfMarca");
   var relogios = [];
-  var FASES = ["fase-black", "fase-friday", "fase-leao"];
+  var FASES = ["fase-giz", "fase-abre", "fase-black", "fase-friday", "fase-bordado"];
 
   function depois(ms, fn) { relogios.push(setTimeout(fn, ms)); }
 
@@ -888,21 +884,42 @@
     acenderCena();
   }
 
-  /* A quebra de tela (vidro.trinca / vidro.estilhacar) e a explosão
-     (fogo.explosao) saíram da abertura a pedido da equipe; os módulos
-     continuam acima, só não são chamados. A entrada agora é só tipográfica:
-     letras do BLACK caindo, FRIDAY subindo com o risco de luz e o leão
-     aparecendo por um círculo de luz. */
+  /* A agulha do bordado: acompanha a costura pelo contorno do brasão,
+     com a mesma curva de aceleração da máscara no CSS (1.7s). */
+  function agulha() {
+    var caminho = document.getElementById("bordadoPonto");
+    var ponta = document.getElementById("bordadoAgulha");
+    if (!caminho || !ponta || !caminho.getTotalLength) return;
+    var L = caminho.getTotalLength(), dur = 1700, t0 = performance.now();
+    function suave(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+    (function passo(agora) {
+      var k = Math.min(1, (agora - t0) / dur);
+      var p = caminho.getPointAtLength(L * suave(k));
+      ponta.setAttribute("cx", p.x.toFixed(1));
+      ponta.setAttribute("cy", p.y.toFixed(1));
+      if (k < 1) requestAnimationFrame(passo);
+      else ponta.style.display = "none";
+    })(t0);
+  }
+
+  /* A abertura do Colégio:
+       150  a giz: BLACK, FRIDAY, o risco e a data são escritos no quadro
+      2150  a capa do caderno abre pela espiral
+      2700  as letras do título entram por trás da capa
+      3150  o brasão é bordado (costura + agulha) e depois se preenche
+      3500  o resto do hero entra em cascata */
   function abertura() {
     raiz.classList.add("is-rodando");
     try { sessionStorage.setItem("bf-colegio-abertura", "1"); } catch (e) {}
     acordar();
 
-    depois(150, function () { raiz.classList.add("fase-black"); });
-    depois(700, function () { raiz.classList.add("fase-friday"); });
-    depois(1300, function () { raiz.classList.add("fase-leao"); acenderCena(); });
-    depois(1650, function () { raiz.classList.add("is-revelado"); });
-    depois(2900, finalizar);
+    depois(150,  function () { raiz.classList.add("fase-giz"); });
+    depois(2150, function () { raiz.classList.add("fase-abre"); });
+    depois(2700, function () { raiz.classList.add("fase-black"); });
+    depois(2950, function () { raiz.classList.add("fase-friday"); });
+    depois(3150, function () { raiz.classList.add("fase-bordado"); agulha(); acenderCena(); });
+    depois(3500, function () { raiz.classList.add("is-revelado"); });
+    depois(5700, finalizar);
   }
 
   var botaoPular = document.getElementById("pular");

@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/brasao-colegio.webp" type="image/webp">
 <link rel="stylesheet" href="styles.css">
 
@@ -61,6 +61,30 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+<!-- =========================================================
+     A ABERTURA: O CADERNO
+     A tela começa como a capa de um caderno escolar, de quadro-negro.
+     BLACK FRIDAY é escrito a giz, letra por letra; a capa então abre
+     (gira pela espiral, à esquerda) e revela a página. O verso da capa é
+     a folha pautada. Só existe enquanto html.is-abertura.
+     ========================================================= -->
+<div class="caderno" id="caderno" aria-hidden="true">
+  <div class="caderno__capa">
+    <div class="caderno__frente">
+      <i class="caderno__espiral"></i>
+      <i class="caderno__poeira"></i>
+      <span class="caderno__etiqueta">Colégio CPPEM <b>·</b> Caderno de ofertas 2027</span>
+      <div class="giz">
+        <span class="giz__linha giz__black"><i style="--i:0">B</i><i style="--i:1">l</i><i style="--i:2">a</i><i style="--i:3">c</i><i style="--i:4">k</i></span>
+        <span class="giz__linha giz__friday"><i style="--i:0">F</i><i style="--i:1">r</i><i style="--i:2">i</i><i style="--i:3">d</i><i style="--i:4">a</i><i style="--i:5">y</i></span>
+        <svg class="giz__risco" viewBox="0 0 400 40" preserveAspectRatio="none"><path pathLength="1" d="M6 26 C 90 14, 170 34, 250 20 S 360 12, 394 22"/></svg>
+        <span class="giz__data">sábado · 14/11 · 19h45 · ao vivo</span>
+      </div>
+    </div>
+    <div class="caderno__verso"></div>
+  </div>
+</div>
+
 <!-- ================= TOPBAR ================= -->
 <div class="topbar" role="note">
   <span class="topbar__dot" aria-hidden="true"></span>
@@ -72,8 +96,9 @@
 <!-- =========================================================
      HERO + ABERTURA
      Título à esquerda, brasão do Colégio no centro e lista VIP à direita.
-     A abertura é só tipográfica: as letras do BLACK caem, as do FRIDAY
-     sobem com um risco dourado e o brasão aparece por um círculo de luz.
+     Depois que a capa do caderno abre, as letras do BLACK caem, as do
+     FRIDAY sobem e o brasão é bordado: a costura dourada percorre o
+     contorno e o brasão se preenche.
      O <h1> é lido como "Black Friday Colégio CPPEM".
      ========================================================= -->
 <section class="hero" id="topo">
@@ -95,6 +120,18 @@
         <i class="onda o2"></i>
         <i class="onda o3"></i>
         <span class="bf__leao"><img src="assets/brasao-colegio.webp" alt="" width="395" height="534" fetchpriority="high"></span>
+        <!-- o bordado: a linha de pontos dourados percorre o contorno do
+             brasão (a máscara revela o tracejado aos poucos) e a agulha
+             vai na frente. O contorno foi extraído da própria imagem. -->
+        <svg class="bordado" viewBox="0 0 395 534" aria-hidden="true">
+          <defs>
+            <mask id="bordado-mascara" maskUnits="userSpaceOnUse" x="0" y="0" width="395" height="534">
+              <path class="bordado__trilha" pathLength="1" d="M155,9 L129,15 L104,21 L80,27 L56,33 L31,39 L13,45 L13,51 L13,57 L14,63 L14,69 L14,75 L14,81 L14,87 L14,93 L14,99 L14,105 L14,111 L14,117 L14,123 L14,129 L14,135 L14,141 L14,147 L14,153 L14,159 L14,165 L14,171 L14,177 L14,183 L15,189 L15,195 L15,201 L15,207 L15,213 L15,219 L15,225 L15,231 L15,237 L15,243 L15,249 L15,255 L15,261 L16,267 L16,273 L16,279 L17,285 L18,291 L19,297 L20,303 L22,309 L23,315 L25,321 L27,327 L10,333 L12,339 L15,345 L17,351 L19,357 L22,363 L24,369 L27,375 L28,381 L25,387 L22,393 L19,399 L16,405 L13,411 L19,417 L33,423 L50,429 L50,435 L53,441 L56,447 L63,453 L74,459 L91,465 L111,471 L118,477 L126,483 L133,489 L141,495 L150,501 L159,507 L168,513 L178,519 L215,519 L225,513 L235,507 L244,501 L252,495 L261,489 L268,483 L276,477 L283,471 L303,465 L322,459 L331,453 L337,447 L340,441 L342,435 L345,429 L367,423 L383,417 L381,411 L378,405 L374,399 L371,393 L367,387 L365,381 L368,375 L371,369 L373,363 L376,357 L378,351 L381,345 L383,339 L364,333 L366,327 L368,321 L370,315 L372,309 L373,303 L374,297 L375,291 L376,285 L376,279 L377,273 L377,267 L377,261 L377,255 L377,249 L377,243 L377,237 L377,231 L377,225 L377,219 L377,213 L377,207 L377,201 L377,195 L377,189 L377,183 L377,177 L377,171 L376,165 L376,159 L376,153 L376,147 L376,141 L375,135 L375,129 L375,123 L375,117 L375,111 L375,105 L375,99 L375,93 L375,87 L374,81 L374,75 L374,69 L373,63 L373,57 L373,51 L357,45 L336,39 L314,33 L292,27 L270,21 L248,15 L224,9 Z"/>
+            </mask>
+          </defs>
+          <path class="bordado__ponto" id="bordadoPonto" d="M155,9 L129,15 L104,21 L80,27 L56,33 L31,39 L13,45 L13,51 L13,57 L14,63 L14,69 L14,75 L14,81 L14,87 L14,93 L14,99 L14,105 L14,111 L14,117 L14,123 L14,129 L14,135 L14,141 L14,147 L14,153 L14,159 L14,165 L14,171 L14,177 L14,183 L15,189 L15,195 L15,201 L15,207 L15,213 L15,219 L15,225 L15,231 L15,237 L15,243 L15,249 L15,255 L15,261 L16,267 L16,273 L16,279 L17,285 L18,291 L19,297 L20,303 L22,309 L23,315 L25,321 L27,327 L10,333 L12,339 L15,345 L17,351 L19,357 L22,363 L24,369 L27,375 L28,381 L25,387 L22,393 L19,399 L16,405 L13,411 L19,417 L33,423 L50,429 L50,435 L53,441 L56,447 L63,453 L74,459 L91,465 L111,471 L118,477 L126,483 L133,489 L141,495 L150,501 L159,507 L168,513 L178,519 L215,519 L225,513 L235,507 L244,501 L252,495 L261,489 L268,483 L276,477 L283,471 L303,465 L322,459 L331,453 L337,447 L340,441 L342,435 L345,429 L367,423 L383,417 L381,411 L378,405 L374,399 L371,393 L367,387 L365,381 L368,375 L371,369 L373,363 L376,357 L378,351 L381,345 L383,339 L364,333 L366,327 L368,321 L370,315 L372,309 L373,303 L374,297 L375,291 L376,285 L376,279 L377,273 L377,267 L377,261 L377,255 L377,249 L377,243 L377,237 L377,231 L377,225 L377,219 L377,213 L377,207 L377,201 L377,195 L377,189 L377,183 L377,177 L377,171 L376,165 L376,159 L376,153 L376,147 L376,141 L375,135 L375,129 L375,123 L375,117 L375,111 L375,105 L375,99 L375,93 L375,87 L374,81 L374,75 L374,69 L373,63 L373,57 L373,51 L357,45 L336,39 L314,33 L292,27 L270,21 L248,15 L224,9 Z" mask="url(#bordado-mascara)"/>
+          <circle class="bordado__agulha" id="bordadoAgulha" r="5" cx="-20" cy="-20"/>
+        </svg>
       </div>
 
       <!-- ---------- coluna do título ---------- -->
@@ -256,10 +293,6 @@
       <span class="eyebrow">Quem confia no Colégio</span>
       <h2 class="section__title section__title--left" id="prova-title">Famílias que <span class="gold">escolheram o CPPEM</span></h2>
     </div>
-    <div class="stats" data-reveal>
-      <div class="stat"><b>1º ao 3º</b><span>Do Fundamental ao Médio</span></div>
-      <div class="stat"><b>Cristã</b><span>E militarizada</span></div>
-      <div class="stat"><b>Caruaru<span class="stat__tr">–</span>PE</b><span>Unidade presencial</span></div>
     </div>
   </div>
 
@@ -267,42 +300,33 @@
     <ul class="bilhetes__faixa" role="list">
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:0.7deg;--y:4px;--w:682"><span class="bilhete__papel"><img src="assets/prova/prova-02.webp" width="682" height="157" loading="lazy" decoding="async" alt="@tacii_almeida: Coisa linda de se ver. Caruaru merece uma escola desse nível, muito sucesso para o @colegiocppem, que Deus continue abençoando e prosperando."></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:1.8deg;--y:7px;--w:391"><span class="bilhete__papel"><img src="assets/prova/prova-09.webp" width="808" height="170" loading="lazy" decoding="async" alt="O melhor colégio de Caruaru! Deus está cuidando de tudo!"></span></li>
-      <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.4deg;--y:7px;--w:481"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="994" height="170" loading="lazy" decoding="async" alt="@vanessamedeiros2255: Que lindo, que orgulho da minha filha fazer parte desse colégio. Que Deus continue abençoando a todos."></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.4deg;--y:7px;--w:461"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="952" height="170" loading="lazy" decoding="async" alt="@vanessamedeiros2255: Que lindo, que orgulho da minha filha fazer parte desse colégio. Que Deus continue abençoando a todos."></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:-2.8deg;--y:-1px;--w:353"><span class="bilhete__papel"><img src="assets/prova/prova-01.webp" width="353" height="74" loading="lazy" decoding="async" alt="Um colégio assim é um sonho. Deus abençoe esse projeto lindo. Quem sabe um dia tenho condições de colocar minha filha aí."></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:2.7deg;--y:2px;--w:700"><span class="bilhete__papel"><img src="assets/prova/prova-12.webp" width="624" height="71" loading="lazy" decoding="async" alt="@mariacarv84: Já fiz a matrícula do meu filho no ensino médio. O Colégio tem uma proposta pedagógica incrível!"></span></li>
-      <li class="bilhete bilhete--c bilhete--ouro" style="--r:2.4deg;--y:-6px;--w:412"><span class="bilhete__papel"><img src="assets/prova/prova-06.webp" width="929" height="170" loading="lazy" decoding="async" alt="Esse vídeo me ajudou muito para a prova da PC-PB. Gratidão!"></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:-0.2deg;--y:-4px;--w:682" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-02.webp" width="682" height="157" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:0.3deg;--y:1px;--w:391" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-09.webp" width="808" height="170" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-2.9deg;--y:-5px;--w:481" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="994" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-2.9deg;--y:-5px;--w:461" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="952" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:-1.3deg;--y:7px;--w:353" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-01.webp" width="353" height="74" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:1.6deg;--y:-5px;--w:700" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-12.webp" width="624" height="71" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.8deg;--y:-6px;--w:412" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-06.webp" width="929" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:0.7deg;--y:-6px;--w:682" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-02.webp" width="682" height="157" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:-3.0deg;--y:6px;--w:391" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-09.webp" width="808" height="170" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-1.7deg;--y:-5px;--w:481" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="994" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-1.7deg;--y:-5px;--w:461" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="952" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:2.9deg;--y:6px;--w:353" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-01.webp" width="353" height="74" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:-1.3deg;--y:7px;--w:700" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-12.webp" width="624" height="71" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--c bilhete--ouro" style="--r:0.2deg;--y:3px;--w:412" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-06.webp" width="929" height="170" loading="lazy" decoding="async" alt=""></span></li>
     </ul>
     <ul class="bilhetes__faixa bilhetes__faixa--volta" role="list">
       <li class="bilhete bilhete--b bilhete--branco" style="--r:-1.8deg;--y:7px;--w:415"><span class="bilhete__papel"><img src="assets/prova/prova-03.webp" width="415" height="170" loading="lazy" decoding="async" alt="@rogeriogouveiaprof: Em meio a um momento da nossa história em que parte da sociedade deixou de cultivar valores essenciais, esse projeto surge para renovar nossas esperanças na juventude. Parabéns a todos que fazem o Colégio CPPEM."></span></li>
       <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.1deg;--y:7px;--w:365"><span class="bilhete__papel"><img src="assets/prova/prova-10.webp" width="658" height="170" loading="lazy" decoding="async" alt="Sou de Bezerros e não pensei duas vezes em colocar minha filha aí!! Sei que foi direção do Senhor!"></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:2.4deg;--y:-3px;--w:392"><span class="bilhete__papel"><img src="assets/prova/prova-05.webp" width="898" height="170" loading="lazy" decoding="async" alt="Lindo de mainha! Amo ver ele crescendo e aprendendo cada dia mais no CPPEM!!!"></span></li>
-      <li class="bilhete bilhete--b bilhete--branco" style="--r:-0.8deg;--y:-5px;--w:423"><span class="bilhete__papel"><img src="assets/prova/prova-07.webp" width="1100" height="170" loading="lazy" decoding="async" alt="@gomes_mell: Nunca me identifiquei tanto com a aula do tio Mota, que maravilha de informações."></span></li>
       <li class="bilhete bilhete--c bilhete--ouro" style="--r:-2.1deg;--y:-7px;--w:393"><span class="bilhete__papel"><img src="assets/prova/prova-11.webp" width="287" height="170" loading="lazy" decoding="async" alt="Parabéns, Diretor, o Senhor tem demonstrado clareza e propósito nesse processo. Continuo orando e satisfeita por meu filho fazer parte desse colégio."></span></li>
-      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-1.2deg;--y:2px;--w:413"><span class="bilhete__papel"><img src="assets/prova/prova-08.webp" width="874" height="170" loading="lazy" decoding="async" alt="@willianoliveira7198: O cara tira onda, parabéns pela aula."></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:-3.0deg;--y:3px;--w:415" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-03.webp" width="415" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--c bilhete--ouro" style="--r:-1.0deg;--y:-3px;--w:365" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-10.webp" width="658" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:1.9deg;--y:-0px;--w:392" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-05.webp" width="898" height="170" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--b bilhete--branco" style="--r:-1.1deg;--y:-0px;--w:423" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-07.webp" width="1100" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.2deg;--y:-7px;--w:393" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-11.webp" width="287" height="170" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--a bilhete--ouro" style="--r:2.9deg;--y:-8px;--w:413" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-08.webp" width="874" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--b bilhete--branco" style="--r:1.5deg;--y:6px;--w:415" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-03.webp" width="415" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--c bilhete--ouro" style="--r:-2.9deg;--y:5px;--w:365" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-10.webp" width="658" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--a bilhete--ouro" style="--r:-0.8deg;--y:1px;--w:392" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-05.webp" width="898" height="170" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--b bilhete--branco" style="--r:-2.9deg;--y:-7px;--w:423" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-07.webp" width="1100" height="170" loading="lazy" decoding="async" alt=""></span></li>
       <li class="bilhete bilhete--c bilhete--ouro" style="--r:-1.9deg;--y:7px;--w:393" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-11.webp" width="287" height="170" loading="lazy" decoding="async" alt=""></span></li>
-      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-1.8deg;--y:4px;--w:413" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-08.webp" width="874" height="170" loading="lazy" decoding="async" alt=""></span></li>
     </ul>
   </div>
 </section>
