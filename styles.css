@@ -1007,3 +1007,43 @@ html.fase-bordado .leao__halo { animation: halo-acende 1.4s var(--ease) .9s both
   /* a data a giz cabe na largura do celular */
   .giz__data { font-size: 1.15rem; white-space: nowrap; }
 }
+
+/* =========================================================
+   CELULAR: O FORMULÁRIO NA PRIMEIRA TELA
+   No celular o topo encolhe para o formulário aparecer já na primeira
+   tela: marca pequena no canto, título menor, sem contagem no hero (o
+   cartão e a barra fixa já mostram o tempo) e selo compacto.
+   ========================================================= */
+@media (max-width: 700px) {
+  html { --bf-mobile: 12.5vw; }
+  .hero { min-height: 0; }
+  .hero__stage { padding: calc(var(--topbar) + .9rem) 0 2rem; }
+  .hero__grid { gap: 1.1rem; }
+  .hero__cena { position: relative; z-index: 2; }
+
+  /* marca: pequena, no canto direito, ao lado do título */
+  .leao { position: absolute; left: auto; right: var(--gutter); top: 2.3rem; transform: none; width: 64px; margin: 0; opacity: 1; z-index: 1; }
+  .leao__halo, .parceria, .marca-uni__nome { display: none; }
+
+  .briefing { display: none; }
+  .alerta { margin-bottom: .7rem; font-size: .6rem; padding: .32rem .7rem; }
+  .bf { font-size: var(--bf-mobile, 12vw); }
+  .bf__assina { margin-top: .5rem; font-size: .66rem; letter-spacing: .22em; }
+  .hero__sub { margin-top: .5rem; font-size: .9rem; line-height: 1.5; }
+  .hero__linha { display: none; }
+
+  /* selo: uma linha só */
+  .selo-card { margin: 0 .5rem -10px; padding: .5rem .8rem; column-gap: .6rem; }
+  .selo-card__icone { width: 32px; height: 32px; font-size: .9rem; }
+  .selo-card__rot, .selo-card__lista { display: none; }
+  .selo-card__titulo { font-size: .95rem; white-space: nowrap; }
+
+  .inscricao__card { padding: 1.1rem 1rem 1rem; }
+  .inscricao__topo { margin-bottom: .6rem; padding-bottom: .6rem; }
+  .inscricao__titulo { font-size: 1.45rem; }
+  .inscricao__lead { margin: .35rem 0 .8rem; font-size: .82rem; line-height: 1.45; }
+  .form { gap: .5rem; }
+  .field input { min-height: 48px; padding: .7rem .9rem; }
+  .form .btn { min-height: 52px; }
+  .inscricao__agenda { margin-top: .7rem; padding-top: .6rem; }
+}
