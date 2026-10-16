@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <!-- Google Tag Manager
+       Precisa ser o primeiro script do <head> — é ele que carrega a PixelX. -->
+  <script>(function(w,d,s,l){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'?l='+l:'';j.async=true;j.src=
+  'https://sgtm.cppem.com.br/metrics/'+dl;f.parentNode.insertBefore(j,f);})
+  (window,document,'script','dataLayer');</script>
+  <!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Black Friday Colégio CPPEM · 14/11 às 19h45, ao vivo no YouTube</title>
+<meta name="description" content="Black Friday do Colégio CPPEM: uma live só, sábado, 14/11, às 19h45, no YouTube da CPPEM. As condições especiais para a matrícula 2027 são reveladas ao vivo. Entre na lista VIP e receba o lembrete no WhatsApp.">
+<meta name="theme-color" content="#061a44">
+
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Colégio CPPEM">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Black Friday Colégio CPPEM · 14/11 às 19h45, ao vivo no YouTube">
+<meta property="og:description" content="As condições especiais da matrícula 2027 reveladas numa live só. Entre na lista VIP e receba o lembrete no WhatsApp.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/brasao-colegio.webp" type="image/webp">
+<link rel="stylesheet" href="styles.css">
+
+<!-- A ABERTURA decide ANTES do primeiro paint se vai tocar: decidir no
+     script.js (fim do <body>) faria o hero piscar pronto e depois sumir.
+     Toca uma vez por sessão. ?abertura=0 pula, ?abertura=1 força.
+     A trava dos 7s é a rede de segurança: se o script.js não carregar, a
+     página não pode ficar presa sem conteúdo. -->
+<script>
+  (function (d) {
+    var raiz = d.documentElement, qs = location.search, visto = false;
+    try { visto = sessionStorage.getItem("bf-colegio-abertura") === "1"; } catch (e) {}
+    var calmo = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var tocar = /abertura=1/.test(qs) || (!visto && !calmo && !/abertura=0/.test(qs));
+    raiz.classList.add("js", tocar ? "is-abertura" : "is-pulado");
+    if (tocar) setTimeout(function () {
+      if (raiz.classList.contains("is-abertura") && !raiz.classList.contains("is-rodando")) {
+        raiz.classList.remove("is-abertura"); raiz.classList.add("is-pulado");
+      }
+    }, 7000);
+  })(document);
+</script>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://sgtm.cppem.com.br/ns.html?id=GTM-PJ379FLQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+<!-- ================= TOPBAR ================= -->
+<div class="topbar" role="note">
+  <span class="topbar__dot" aria-hidden="true"></span>
+  <span data-fase-so="antes">Black Friday Colégio CPPEM · <b>14/11 às 19h45</b><span class="topbar__extra"> · ao vivo no YouTube</span></span>
+  <span data-fase-so="ao-vivo" hidden><b>Estamos ao vivo agora</b> · venha para o YouTube</span>
+  <span data-fase-so="depois" hidden>A live acabou · <b>assista à gravação no canal</b></span>
+</div>
+
+<!-- =========================================================
+     HERO + ABERTURA
+     Título à esquerda, brasão do Colégio no centro e lista VIP à direita.
+     A abertura é só tipográfica: as letras do BLACK caem, as do FRIDAY
+     sobem com um risco dourado e o brasão aparece por um círculo de luz.
+     O <h1> é lido como "Black Friday Colégio CPPEM".
+     ========================================================= -->
+<section class="hero" id="topo">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__grao" aria-hidden="true"></div>
+  <canvas class="hero__vidro" id="vidro" aria-hidden="true"></canvas>
+  <canvas class="hero__fogo" id="fogo" aria-hidden="true"></canvas>
+  <canvas class="hero__raios" id="raios" aria-hidden="true"></canvas>
+  <div class="hero__clarao" id="clarao" aria-hidden="true"></div>
+
+  <div class="hero__stage">
+    <div class="container hero__grid">
+
+      <!-- ---------- o brasão: peça central, atrás do texto ---------- -->
+      <div class="leao" id="bfMarca" aria-hidden="true">
+        <i class="leao__halo"></i>
+        <i class="nucleo"></i>
+        <i class="onda"></i>
+        <i class="onda o2"></i>
+        <i class="onda o3"></i>
+        <span class="bf__leao"><img src="assets/brasao-colegio.webp" alt="" width="395" height="534" fetchpriority="high"></span>
+      </div>
+
+      <!-- ---------- coluna do título ---------- -->
+      <div class="hero__cena">
+        <span class="alerta anim d1">
+          <i class="alerta__ponto" aria-hidden="true"></i>
+          <b data-fase-so="antes">Ao vivo no YouTube</b>
+          <b data-fase-so="ao-vivo" hidden>Ao vivo agora</b>
+          <b data-fase-so="depois" hidden>Live encerrada</b>
+          <i class="alerta__sep" aria-hidden="true"></i>
+          <span>Sáb · 14/11 · 19h45</span>
+        </span>
+
+        <!-- cada letra é um <i> com --i (ordem de entrada) -->
+        <h1 class="bf" aria-label="Black Friday Colégio CPPEM">
+          <span class="bf__black" id="bfBlack" aria-hidden="true"><span class="bf__in"><i style="--i:0">B</i><i style="--i:1">L</i><i style="--i:2">A</i><i style="--i:3">C</i><i style="--i:4">K</i></span></span>
+          <span class="bf__friday" id="bfFriday" aria-hidden="true"><span class="bf__in"><i style="--i:0">F</i><i style="--i:1">R</i><i style="--i:2">I</i><i style="--i:3">D</i><i style="--i:4">A</i><i style="--i:5">Y</i></span></span>
+        </h1>
+
+        <p class="bf__assina anim d1">Colégio CPPEM <i></i> Caruaru–PE</p>
+
+        <p class="hero__sub anim d2">
+          <mark>As melhores condições do ano</mark> para a matrícula 2027,
+          reveladas numa live só para as famílias do Colégio.
+        </p>
+
+        <div class="hero__linha anim d3">
+          <div class="cdown cdown--hero" id="cdownHero" role="timer" aria-live="off" aria-label="Contagem regressiva para a live">
+            <div class="cdown__box"><b data-c="d">00</b><span>dias</span></div>
+            <div class="cdown__box"><b data-c="h">00</b><span>horas</span></div>
+            <div class="cdown__box"><b data-c="m">00</b><span>min</span></div>
+            <div class="cdown__box"><b data-c="s">00</b><span>seg</span></div>
+          </div>
+          <a class="btn btn--ghost btn--yt" data-youtube-canal data-cta="hero-youtube" href="https://www.youtube.com/@cppemconcursos?sub_confirmation=1" target="_blank" rel="noopener">
+            <svg class="ico-yt" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+            <span>Inscrever no canal</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ---------- coluna do formulário ----------
+           NOMENCLATURA CANÔNICA (TRACKING.md §6.0) — mesma da livepmpe:
+           · o id do <form> é único na página e é o identificador no painel;
+           · name="name" / "phone" / "email", e .pxa_mask_phone no telefone. -->
+      <div class="inscricao anim d3" id="inscricao">
+
+        <!-- selo: faixa colada no topo do cartão -->
+        <div class="selo-card" role="note" aria-label="Melhor condição do ano para a matrícula 2027, revelada só na live">
+          <span class="selo-card__icone" aria-hidden="true">%</span>
+          <span class="selo-card__rot" aria-hidden="true">Selo Black Colégio CPPEM</span>
+          <b class="selo-card__titulo" aria-hidden="true">Melhor condição <br>do ano</b>
+          <ul class="selo-card__lista" aria-hidden="true">
+            <li>Matrícula 2027</li>
+            <li>Revelada só na live</li>
+          </ul>
+        </div>
+
+        <div class="inscricao__card">
+          <div class="inscricao__topo">
+            <span class="inscricao__tag">Lista VIP · gratuita</span>
+            <span class="inscricao__tempo" id="formTempo" aria-hidden="true">--</span>
+          </div>
+
+          <h2 class="inscricao__titulo">Garanta a <span class="gold nowrap">vaga na frente</span></h2>
+          <p class="inscricao__lead">
+            As condições aparecem às <b>19h45 de 14/11</b>. Quem está na lista recebe
+            o lembrete e o link da live no WhatsApp.
+          </p>
+
+          <form class="form" name="lead_form" id="bf-colegio-form" novalidate data-fase-so="antes">
+            <div class="field">
+              <label class="sr-only" for="nome">Nome do responsável</label>
+              <input type="text" id="nome" name="name" autocomplete="name" placeholder="Nome do responsável" required>
+              <span class="err" data-error-for="nome"></span>
+            </div>
+            <div class="field">
+              <label class="sr-only" for="telefone">WhatsApp com DDD</label>
+              <input type="text" id="telefone" name="phone" class="pxa_mask_phone" inputmode="tel" autocomplete="tel" placeholder="WhatsApp com DDD" required>
+              <span class="err" data-error-for="telefone"></span>
+            </div>
+            <div class="field">
+              <label class="sr-only" for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="Seu melhor e-mail" required>
+              <span class="err" data-error-for="email"></span>
+            </div>
+
+            <button type="submit" class="btn btn--gold btn--lg btn--block shine" id="bf-colegio-submit">
+              <span>Entrar na lista VIP</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+
+            <p class="form__legal">
+              Ao se inscrever, você aceita receber os avisos da Black Friday do Colégio por WhatsApp e e-mail.
+              <a href="https://cppem.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>.
+            </p>
+
+            <div class="success" id="form-success" role="status" hidden>
+              <b>Você está na lista!</b>
+              <span>Levando você para o grupo do WhatsApp…</span>
+            </div>
+          </form>
+
+          <div class="inscricao__live" data-fase-so="ao-vivo" hidden>
+            <a class="btn btn--gold btn--lg btn--block shine" data-youtube-live data-cta="form-live" href="https://www.youtube.com/@cppemconcursos/live" target="_blank" rel="noopener">
+              <span>Assistir ao vivo agora</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <div class="inscricao__live" data-fase-so="depois" hidden>
+            <a class="btn btn--ghost btn--lg btn--block" data-cta="form-depois" href="https://www.youtube.com/@cppemconcursos/streams" target="_blank" rel="noopener">
+              <span>Ver a gravação no canal</span>
+            </a>
+          </div>
+
+          <p class="inscricao__agenda">
+            <a data-agenda="google" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+              Salvar a live no Google Agenda
+            </a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button type="button" class="hero__pular" id="pular" tabindex="-1">
+    Pular
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+</section>
+
+<!-- ================= FAIXAS ================= -->
+<div class="fitas" aria-hidden="true">
+  <div class="fita fita--ouro">
+    <div class="fita__track">
+      <span>Black Friday Colégio CPPEM</span><span>14/11</span><span>19h45</span><span>Ao vivo no YouTube</span><span>Matrícula 2027</span>
+      <span>Black Friday Colégio CPPEM</span><span>14/11</span><span>19h45</span><span>Ao vivo no YouTube</span><span>Matrícula 2027</span>
+    </div>
+  </div>
+  <div class="fita fita--prata">
+    <div class="fita__track fita__track--rev">
+      <span>Fé</span><span>Disciplina</span><span>Excelência</span><span>Fundamental I ao Ensino Médio</span><span>Caruaru–PE</span>
+      <span>Fé</span><span>Disciplina</span><span>Excelência</span><span>Fundamental I ao Ensino Médio</span><span>Caruaru–PE</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ================= PROVA =================
+     Comentários reais de famílias, como bilhetes de papel rasgado. Duas
+     faixas correndo em sentidos opostos; cada bilhete com inclinação (--r)
+     e desnível (--y) próprios. Cada faixa repete o conjunto três vezes e
+     anda 1/3 da largura, para o laço nunca mostrar a emenda. -->
+<section class="section prova" id="prova" aria-labelledby="prova-title">
+  <div class="container prova__head">
+    <div data-reveal>
+      <span class="eyebrow">Quem confia no Colégio</span>
+      <h2 class="section__title section__title--left" id="prova-title">Famílias que <span class="gold">escolheram o CPPEM</span></h2>
+    </div>
+    <div class="stats" data-reveal>
+      <div class="stat"><b>1º ao 3º</b><span>Do Fundamental ao Médio</span></div>
+      <div class="stat"><b>Cristã</b><span>E militarizada</span></div>
+      <div class="stat"><b>Caruaru<span class="stat__tr">–</span>PE</b><span>Unidade presencial</span></div>
+    </div>
+  </div>
+
+  <div class="bilhetes" data-reveal>
+    <ul class="bilhetes__faixa" role="list">
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:0.7deg;--y:4px;--w:682"><span class="bilhete__papel"><img src="assets/prova/prova-02.webp" width="682" height="157" loading="lazy" decoding="async" alt="@tacii_almeida: Coisa linda de se ver. Caruaru merece uma escola desse nível, muito sucesso para o @colegiocppem, que Deus continue abençoando e prosperando."></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:1.8deg;--y:7px;--w:391"><span class="bilhete__papel"><img src="assets/prova/prova-09.webp" width="808" height="170" loading="lazy" decoding="async" alt="O melhor colégio de Caruaru! Deus está cuidando de tudo!"></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.4deg;--y:7px;--w:481"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="994" height="170" loading="lazy" decoding="async" alt="@vanessamedeiros2255: Que lindo, que orgulho da minha filha fazer parte desse colégio. Que Deus continue abençoando a todos."></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-2.8deg;--y:-1px;--w:353"><span class="bilhete__papel"><img src="assets/prova/prova-01.webp" width="353" height="74" loading="lazy" decoding="async" alt="Um colégio assim é um sonho. Deus abençoe esse projeto lindo. Quem sabe um dia tenho condições de colocar minha filha aí."></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:2.7deg;--y:2px;--w:700"><span class="bilhete__papel"><img src="assets/prova/prova-12.webp" width="624" height="71" loading="lazy" decoding="async" alt="@mariacarv84: Já fiz a matrícula do meu filho no ensino médio. O Colégio tem uma proposta pedagógica incrível!"></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:2.4deg;--y:-6px;--w:412"><span class="bilhete__papel"><img src="assets/prova/prova-06.webp" width="929" height="170" loading="lazy" decoding="async" alt="Esse vídeo me ajudou muito para a prova da PC-PB. Gratidão!"></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-0.2deg;--y:-4px;--w:682" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-02.webp" width="682" height="157" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:0.3deg;--y:1px;--w:391" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-09.webp" width="808" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-2.9deg;--y:-5px;--w:481" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="994" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-1.3deg;--y:7px;--w:353" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-01.webp" width="353" height="74" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:1.6deg;--y:-5px;--w:700" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-12.webp" width="624" height="71" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.8deg;--y:-6px;--w:412" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-06.webp" width="929" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:0.7deg;--y:-6px;--w:682" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-02.webp" width="682" height="157" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:-3.0deg;--y:6px;--w:391" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-09.webp" width="808" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-1.7deg;--y:-5px;--w:481" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="994" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:2.9deg;--y:6px;--w:353" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-01.webp" width="353" height="74" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:-1.3deg;--y:7px;--w:700" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-12.webp" width="624" height="71" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:0.2deg;--y:3px;--w:412" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-06.webp" width="929" height="170" loading="lazy" decoding="async" alt=""></span></li>
+    </ul>
+    <ul class="bilhetes__faixa bilhetes__faixa--volta" role="list">
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:-1.8deg;--y:7px;--w:415"><span class="bilhete__papel"><img src="assets/prova/prova-03.webp" width="415" height="170" loading="lazy" decoding="async" alt="@rogeriogouveiaprof: Em meio a um momento da nossa história em que parte da sociedade deixou de cultivar valores essenciais, esse projeto surge para renovar nossas esperanças na juventude. Parabéns a todos que fazem o Colégio CPPEM."></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.1deg;--y:7px;--w:365"><span class="bilhete__papel"><img src="assets/prova/prova-10.webp" width="658" height="170" loading="lazy" decoding="async" alt="Sou de Bezerros e não pensei duas vezes em colocar minha filha aí!! Sei que foi direção do Senhor!"></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:2.4deg;--y:-3px;--w:392"><span class="bilhete__papel"><img src="assets/prova/prova-05.webp" width="898" height="170" loading="lazy" decoding="async" alt="Lindo de mainha! Amo ver ele crescendo e aprendendo cada dia mais no CPPEM!!!"></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:-0.8deg;--y:-5px;--w:423"><span class="bilhete__papel"><img src="assets/prova/prova-07.webp" width="1100" height="170" loading="lazy" decoding="async" alt="@gomes_mell: Nunca me identifiquei tanto com a aula do tio Mota, que maravilha de informações."></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-2.1deg;--y:-7px;--w:393"><span class="bilhete__papel"><img src="assets/prova/prova-11.webp" width="287" height="170" loading="lazy" decoding="async" alt="Parabéns, Diretor, o Senhor tem demonstrado clareza e propósito nesse processo. Continuo orando e satisfeita por meu filho fazer parte desse colégio."></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-1.2deg;--y:2px;--w:413"><span class="bilhete__papel"><img src="assets/prova/prova-08.webp" width="874" height="170" loading="lazy" decoding="async" alt="@willianoliveira7198: O cara tira onda, parabéns pela aula."></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:-3.0deg;--y:3px;--w:415" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-03.webp" width="415" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-1.0deg;--y:-3px;--w:365" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-10.webp" width="658" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:1.9deg;--y:-0px;--w:392" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-05.webp" width="898" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:-1.1deg;--y:-0px;--w:423" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-07.webp" width="1100" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:1.2deg;--y:-7px;--w:393" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-11.webp" width="287" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:2.9deg;--y:-8px;--w:413" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-08.webp" width="874" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:1.5deg;--y:6px;--w:415" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-03.webp" width="415" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-2.9deg;--y:5px;--w:365" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-10.webp" width="658" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-0.8deg;--y:1px;--w:392" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-05.webp" width="898" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--b bilhete--branco" style="--r:-2.9deg;--y:-7px;--w:423" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-07.webp" width="1100" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--c bilhete--ouro" style="--r:-1.9deg;--y:7px;--w:393" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-11.webp" width="287" height="170" loading="lazy" decoding="async" alt=""></span></li>
+      <li class="bilhete bilhete--a bilhete--ouro" style="--r:-1.8deg;--y:4px;--w:413" aria-hidden="true"><span class="bilhete__papel"><img src="assets/prova/prova-08.webp" width="874" height="170" loading="lazy" decoding="async" alt=""></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= OS LACRADOS =================
+     O que pode entrar na Black do Colégio. O desconto de cada item é o
+     segredo da live — por isso o card mostra "??%". Se algum item não
+     entrar, remova o <article> inteiro. -->
+<section class="section section--alt" id="lacrados" aria-labelledby="lacrados-title">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <span class="eyebrow">O que pode estar na Black</span>
+      <h2 class="section__title" id="lacrados-title">Tudo lacrado <span class="gold">até as 19h45</span></h2>
+    </div>
+
+    <div class="lacrados">
+      <article class="lacre" data-reveal>
+        <span class="lacre__fita" aria-hidden="true">Lacrado</span>
+        <span class="lacre__off" aria-hidden="true">??<small>%</small></span>
+        <h3>Matrícula 2027</h3>
+        <p>A vaga do seu filho para o próximo ano letivo.</p>
+      </article>
+      <article class="lacre" data-reveal>
+        <span class="lacre__fita" aria-hidden="true">Lacrado</span>
+        <span class="lacre__off" aria-hidden="true">??<small>%</small></span>
+        <h3>Mensalidades</h3>
+        <p>Condições especiais para as famílias que fecharem na live.</p>
+      </article>
+      <article class="lacre" data-reveal>
+        <span class="lacre__fita" aria-hidden="true">Lacrado</span>
+        <span class="lacre__off" aria-hidden="true">??<small>%</small></span>
+        <h3>Material e fardamento</h3>
+        <p>O kit do ano letivo com condição de Black Friday.</p>
+      </article>
+      <article class="lacre lacre--prata" data-reveal>
+        <span class="lacre__fita" aria-hidden="true">Surpresa</span>
+        <span class="lacre__off" aria-hidden="true">?</span>
+        <h3>E mais uma coisa…</h3>
+        <p>Essa a gente só conta ao vivo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTAGEM + CTA FINAL ================= -->
+<section class="section section--bomba" id="contagem" aria-labelledby="contagem-title">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <span class="eyebrow">Contagem regressiva</span>
+      <h2 class="section__title" id="contagem-title">Falta pouco para <span class="gold">abrir os lacres</span></h2>
+    </div>
+
+    <div class="bomba" data-reveal>
+      <div class="cdown cdown--big" id="cdownBig" role="timer" aria-live="off" aria-label="Contagem regressiva para a live">
+        <div class="cdown__box"><b data-c="d">00</b><span>dias</span></div>
+        <div class="cdown__box"><b data-c="h">00</b><span>horas</span></div>
+        <div class="cdown__box"><b data-c="m">00</b><span>min</span></div>
+        <div class="cdown__box"><b data-c="s">00</b><span>seg</span></div>
+      </div>
+
+      <p class="bomba__nota" data-fase-so="antes">Sábado, <b>14 de novembro, às 19h45</b>, ao vivo no YouTube.</p>
+      <p class="bomba__nota" data-fase-so="ao-vivo" hidden><b>Começou.</b> A live está no ar agora.</p>
+      <p class="bomba__nota" data-fase-so="depois" hidden>A live acabou. A gravação fica no canal da CPPEM.</p>
+
+      <a class="btn btn--gold btn--lg shine" href="#inscricao" data-ir-form data-cta="contagem" data-fase-so="antes">
+        <span>Garantir meu lugar na lista VIP</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--gold btn--lg shine" data-youtube-live data-cta="contagem-live" href="https://www.youtube.com/@cppemconcursos/live" target="_blank" rel="noopener" data-fase-so="ao-vivo" hidden>
+        <span>Assistir ao vivo agora</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= RODAPÉ ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__marca">
+          <img src="assets/brasao-colegio.webp" alt="" width="395" height="534" loading="lazy">
+          <span><b>Colégio CPPEM</b>Caruaru · Pernambuco</span>
+        </div>
+        <p class="footer__quote">&ldquo;Fé, disciplina e excelência em cada fase da vida escolar.&rdquo;</p>
+      </div>
+
+      <div class="footer__social">
+        <a href="https://www.instagram.com/colegiocppem/" target="_blank" rel="noopener" aria-label="Instagram do Colégio CPPEM">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9s.7.8.9 1.4c.1.4.3 1 .4 2.2 0 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4s-.8.7-1.4.9c-.4.1-1 .3-2.2.4-1.3 0-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.1-.4-.3-1-.4-2.2 0-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4s.8-.7 1.4-.9c.4-.1 1-.3 2.2-.4 1.3 0 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2 1.4-.7.6-1.1 1.2-1.4 2C.3 4.7.1 5.6.1 6.9 0 8.2 0 8.6 0 12s0 3.8.1 5.1c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2 .6.7 1.2 1.1 2 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5.1.1s3.8 0 5.1-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2-1.4.7-.6 1.1-1.2 1.4-2 .3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5.1s0-3.8-.1-5.1c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2-.6-.7-1.2-1.1-2-1.4-.7-.3-1.6-.5-2.9-.5C15.8 0 15.4 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.4 1.4 0 1 1-2.9 0 1.4 1.4 0 0 1 2.9 0z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@cppemconcursos" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <span>© <span id="year">2026</span> <strong>Cppem Colégio e Cursos LTDA.</strong> · Caruaru, Pernambuco · CNPJ 57.347.872/0001-48</span>
+      <a href="https://cppem.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= BARRA FIXA (MOBILE) ================= -->
+<div class="dock" id="dock">
+  <div class="dock__info">
+    <b>Black Friday · 14/11</b>
+    <span id="dockTempo">19h45 · ao vivo</span>
+  </div>
+  <a class="btn btn--gold" href="#inscricao" data-ir-form data-cta="dock" data-fase-so="antes">Lista VIP</a>
+  <a class="btn btn--gold" data-youtube-live data-cta="dock-live" href="https://www.youtube.com/@cppemconcursos/live" target="_blank" rel="noopener" data-fase-so="ao-vivo" hidden>Assistir</a>
+</div>
+
+<canvas class="brasas" id="brasas" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
