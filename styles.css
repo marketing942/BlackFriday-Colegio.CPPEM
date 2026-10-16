@@ -1022,7 +1022,7 @@ html.fase-bordado .leao__halo { animation: halo-acende 1.4s var(--ease) .9s both
   .hero__cena { position: relative; z-index: 2; }
 
   /* marca: pequena, no canto direito, ao lado do título */
-  .leao { position: absolute; left: auto; right: var(--gutter); top: 2.3rem; transform: none; width: 64px; margin: 0; opacity: 1; z-index: 1; }
+  .leao { position: absolute; left: auto; right: var(--gutter); top: .5rem; transform: none; width: 64px; margin: 0; opacity: 1; z-index: 1; }
   .leao__halo, .parceria, .marca-uni__nome { display: none; }
 
   .briefing { display: none; }
@@ -1046,4 +1046,13 @@ html.fase-bordado .leao__halo { animation: halo-acende 1.4s var(--ease) .9s both
   .field input { min-height: 48px; padding: .7rem .9rem; }
   .form .btn { min-height: 52px; }
   .inscricao__agenda { margin-top: .7rem; padding-top: .6rem; }
+}
+
+/* 1A · no celular a etiqueta "Ao vivo no YouTube" sai do hero e a barra
+   do topo assume a função: "Ao vivo no YouTube · Seg · 09/11 · 19h45" */
+.topbar__yt { display: none; }
+@media (max-width: 700px) {
+  .hero .alerta { display: none; }
+  .topbar__nome { display: none; }
+  .topbar__yt { display: inline; }
 }
