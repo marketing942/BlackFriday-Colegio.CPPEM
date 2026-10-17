@@ -4,7 +4,7 @@ Landing da Black Friday do **Colégio CPPEM**: evento **presencial**, **sábado,
 A página capta a **lista VIP** (responsável, WhatsApp, e-mail) e leva o inscrito ao grupo do WhatsApp.
 
 Mesma base técnica da Black Friday de concursos (`../blackFridayCPPEM`), com a identidade do Colégio:
-azul-noite `#061a44` / `#10307a`, dourado `#f2b01e` no FRIDAY e nos botões, Nunito + Nunito Sans,
+preto e dourado (brasão preto e ouro), dourado `#f2b01e` no FRIDAY e nos botões, Nunito + Nunito Sans,
 brasão no centro do hero. Tom escolar: sem os efeitos táticos da página de concursos.
 
 ## Antes de publicar

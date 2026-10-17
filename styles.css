@@ -8,11 +8,11 @@
    ========================================================= */
 
 :root {
-  /* identidade Colégio CPPEM (mesmos tokens do site institucional) */
-  --ink:      #030b1f;   /* fundo: azul quase preto — tom de noite de gala */
-  --ink-2:    #061430;   /* seções alternadas */
-  --panel:    #0b1d45;
-  --panel-2:  #10275a;
+  /* Black Friday do Colégio: preto e dourado (brasão preto e ouro) */
+  --ink:      #0b0b0a;   /* fundo: azul quase preto — tom de noite de gala */
+  --ink-2:    #141311;   /* seções alternadas */
+  --panel:    #1e1c19;
+  --panel-2:  #282622;
   --line:     rgba(255, 255, 255, .1);
   --line-2:   rgba(255, 255, 255, .18);
 
@@ -23,10 +23,10 @@
 
   --silver:      #e6ebf5;
   --silver-hot:  #ffffff;
-  --silver-deep: #9aa7c2;
+  --silver-deep: #b0a695;
 
   --text:  #ffffff;
-  --muted: #a9b6d2;
+  --muted: #c0b5a3;
 
   --display: "Nunito", system-ui, sans-serif;
 
@@ -184,7 +184,7 @@ html.is-abertura:not(.is-revelado) .topbar { transform: translateY(-100%); }
     radial-gradient(32% 48% at 54% 46%, rgba(220, 225, 235, .06), transparent 70%),
     radial-gradient(30% 45% at 80% 50%, rgba(242, 176, 30, .04), transparent 70%),
     radial-gradient(100% 80% at 50% 50%, transparent 45%, rgba(0, 0, 0, .65)),
-    linear-gradient(180deg, #082154 0%, #061a44 60%, #04122f 100%);
+    linear-gradient(180deg, #211f1c 0%, #1a1916 60%, #12110f 100%);
 }
 .hero__grao {
   position: absolute; inset: 0; z-index: 1; opacity: .07; pointer-events: none;
@@ -242,7 +242,7 @@ html.is-abertura .hero__vidro { display: block; }
   display: inline-flex; align-items: center; gap: .6rem;
   padding: .42rem 1rem; margin-bottom: 1.4rem;
   border: 1px solid rgba(242, 176, 30, .45); border-radius: 999px;
-  background: rgba(6, 22, 58, .6);
+  background: rgba(22, 21, 19, .6);
   font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
   color: var(--muted);
 }
@@ -314,7 +314,7 @@ html.is-abertura .hero__vidro { display: block; }
 /* ---------- o leão (o que a explosão revela) ---------- */
 .leao {
   position: absolute; z-index: 1; left: 54%; top: 50%;
-  width: clamp(240px, 22vw, 330px); aspect-ratio: 395 / 534;
+  width: clamp(240px, 22vw, 330px); aspect-ratio: 458 / 620;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -364,7 +364,7 @@ html.is-abertura .hero__vidro { display: block; }
 .cdown__box {
   position: relative; min-width: 4.3rem; padding: .55rem .5rem .45rem; text-align: center;
   border: 1px solid var(--line-2); border-radius: 12px;
-  background: linear-gradient(180deg, rgba(22, 58, 138, .85), rgba(8, 30, 74, .9));
+  background: linear-gradient(180deg, rgba(59, 56, 50, .85), rgba(30, 28, 25, .9));
   box-shadow: 0 10px 24px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .08);
 }
 .cdown--hero .cdown__box { min-width: 3.5rem; padding: .45rem .4rem .35rem; border-radius: 10px; }
@@ -389,7 +389,7 @@ html.is-abertura .hero__vidro { display: block; }
   border: 1px solid rgba(242, 176, 30, .3); border-radius: 16px;
   background:
     linear-gradient(180deg, rgba(242, 176, 30, .08), transparent 40%),
-    rgba(8, 32, 80, .92);
+    rgba(32, 30, 27, .92);
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
   box-shadow: 0 30px 70px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .06);
 }
@@ -571,7 +571,7 @@ html.is-pulado .anim { animation: sobe .75s var(--freada) both; }
   box-shadow: 0 8px 22px rgba(0, 0, 0, .5);
 }
 .fita--ouro  { background: linear-gradient(180deg, var(--gold-hot), var(--gold) 60%, #b8904a); color: #1b1400; transform: translateY(-62%) rotate(-2.6deg); z-index: 2; }
-.fita--prata { background: linear-gradient(180deg, #fff, #eef3fb 60%, #d5deee); color: #0a2356; transform: translateY(-38%) rotate(2.2deg); }
+.fita--prata { background: linear-gradient(180deg, #fff, #eef3fb 60%, #eaddc7); color: #23211e; transform: translateY(-38%) rotate(2.2deg); }
 .fita__track { display: flex; width: max-content; animation: corre 26s linear infinite; }
 .fita__track--rev { animation-direction: reverse; animation-duration: 32s; }
 .fita__track span { display: inline-flex; align-items: center; white-space: nowrap; padding: 0 1.1rem; }
@@ -630,7 +630,7 @@ html.is-pulado .anim { animation: sobe .75s var(--freada) both; }
 .bilhete--branco .bilhete__papel {
   background:
     radial-gradient(120% 140% at 20% 0%, rgba(255, 255, 255, .9), transparent 55%),
-    linear-gradient(170deg, #ffffff 0%, #f3f6fb 55%, #e2e8f3 100%);
+    linear-gradient(170deg, #ffffff 0%, #f3f6fb 55%, #f5e7d0 100%);
 }
 
 /* papel rasgado — três recortes, para nenhum bilhete repetir a borda do vizinho */
@@ -676,7 +676,7 @@ html.is-pulado .anim { animation: sobe .75s var(--freada) both; }
 }
 .lacre h3 { margin-top: .5rem; font-size: 1.1rem; font-weight: 800; }
 .lacre p { margin-top: .3rem; color: var(--muted); font-size: .88rem; }
-.lacre--prata .lacre__fita { background: linear-gradient(180deg, #fff, var(--silver)); color: #0a2356; }
+.lacre--prata .lacre__fita { background: linear-gradient(180deg, #fff, var(--silver)); color: #23211e; }
 .lacre--prata .lacre__off { background: linear-gradient(180deg, #fff, var(--silver) 55%, var(--silver-deep)); -webkit-background-clip: text; background-clip: text; }
 
 /* ===================== O PAVIO ===================== */
@@ -713,7 +713,7 @@ html.is-pulado .anim { animation: sobe .75s var(--freada) both; }
 .bomba__nota b { color: var(--text); }
 
 /* ===================== RODAPÉ ===================== */
-.footer { padding: 2.6rem 0 6.5rem; background: #04122f; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+.footer { padding: 2.6rem 0 6.5rem; background: #12110f; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
 .footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
 .footer__marca { display: flex; align-items: center; gap: .8rem; }
 .footer__marca img { width: 48px; }
@@ -736,7 +736,7 @@ html.is-pulado .anim { animation: sobe .75s var(--freada) both; }
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
   display: none; align-items: center; justify-content: space-between; gap: .8rem;
   padding: .7rem var(--gutter) calc(.7rem + env(safe-area-inset-bottom));
-  background: rgba(6, 26, 68, .95); border-top: 1px solid rgba(242, 176, 30, .35);
+  background: rgba(26, 25, 22, .95); border-top: 1px solid rgba(242, 176, 30, .35);
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   transform: translateY(110%); transition: transform .4s var(--ease);
 }
@@ -833,10 +833,10 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 .hero__bg {
   background:
     radial-gradient(34% 46% at 54% 46%, rgba(242, 176, 30, .16), transparent 70%),
-    radial-gradient(60% 38% at 50% -6%, rgba(40, 80, 170, .32), transparent 70%),
+    radial-gradient(60% 38% at 50% -6%, rgba(242, 176, 30, .32), transparent 70%),
     radial-gradient(40% 30% at 50% 108%, rgba(242, 176, 30, .1), transparent 70%),
     radial-gradient(100% 80% at 50% 50%, transparent 45%, rgba(0, 0, 0, .7)),
-    linear-gradient(180deg, #06122d 0%, #030b1f 60%, #020714 100%);
+    linear-gradient(180deg, #121110 0%, #0b0b0a 60%, #070706 100%);
 }
 /* fios dourados finos no alto e no pé do hero, como moldura de convite */
 .hero::before, .hero::after {
@@ -845,12 +845,12 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 }
 .hero::before { top: var(--topbar); }
 .hero::after  { bottom: 0; }
-.inscricao__card { background: linear-gradient(180deg, rgba(242, 176, 30, .07), transparent 40%), rgba(6, 18, 46, .92); border-color: rgba(242, 176, 30, .32); }
-.cdown__box { background: linear-gradient(180deg, rgba(16, 40, 92, .9), rgba(4, 14, 36, .95)); }
+.inscricao__card { background: linear-gradient(180deg, rgba(242, 176, 30, .07), transparent 40%), rgba(19, 17, 16, .92); border-color: rgba(242, 176, 30, .32); }
+.cdown__box { background: linear-gradient(180deg, rgba(41, 39, 35, .9), rgba(14, 13, 12, .95)); }
 .section--alt { border-color: rgba(242, 176, 30, .14); }
-.dock { background: rgba(3, 11, 31, .95); }
-.footer { background: #020714; border-top-color: rgba(242, 176, 30, .14); }
-.lacre { background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, .02) 0 12px, transparent 12px 24px), linear-gradient(180deg, #0e2453, #081a3f); }
+.dock { background: rgba(11, 11, 10, .95); }
+.footer { background: #070706; border-top-color: rgba(242, 176, 30, .14); }
+.lacre { background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, .02) 0 12px, transparent 12px 24px), linear-gradient(180deg, #25231f, #1a1916); }
 
 /* prova sem os cards de números: só o título */
 .prova__head { grid-template-columns: 1fr; }
@@ -862,7 +862,7 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 .caderno { display: none; position: fixed; inset: 0; z-index: 400; perspective: 2400px; pointer-events: none; }
 html.is-abertura .caderno { display: block; }
 /* a página por baixo vai clareando enquanto a capa abre */
-.caderno::before { content: ""; position: absolute; inset: 0; background: #020714; }
+.caderno::before { content: ""; position: absolute; inset: 0; background: #070706; }
 html.fase-abre .caderno::before { animation: some .9s var(--ease) .35s forwards; }
 @keyframes some { to { opacity: 0; } }
 
@@ -883,7 +883,7 @@ html.fase-abre .caderno__capa { animation: capa-abre 1.2s cubic-bezier(.65, 0, .
     radial-gradient(28% 14% at 28% 26%, rgba(255, 255, 255, .05), transparent 70%),
     radial-gradient(34% 12% at 72% 74%, rgba(255, 255, 255, .04), transparent 70%),
     radial-gradient(22% 10% at 64% 20%, rgba(255, 255, 255, .035), transparent 70%),
-    radial-gradient(80% 70% at 50% 46%, #142b55, #0a1a38 58%, #040c20);
+    radial-gradient(80% 70% at 50% 46%, #2b2925, #1a1816 58%, #0d0c0b);
   box-shadow: inset 0 0 140px rgba(0, 0, 0, .65);
 }
 html.fase-abre .caderno__frente { animation: escurece 1.2s cubic-bezier(.65, 0, .25, 1) forwards; }
@@ -903,7 +903,7 @@ html.fase-abre .caderno__frente { animation: escurece 1.2s cubic-bezier(.65, 0, 
   position: absolute; left: 0; top: 0; bottom: 0; width: clamp(34px, 4vw, 50px); z-index: 2;
   background:
     radial-gradient(circle at 74% 50%, #01040c 0 5px, transparent 5.5px) 0 0 / 100% 30px repeat-y,
-    linear-gradient(180deg, transparent 0 11px, #c9d1df 11px, #f4f6fa 13px, #8e98ab 16px, transparent 16px) 0 0 / 74% 30px repeat-y;
+    linear-gradient(180deg, transparent 0 11px, #ddd0bb 11px, #f4f6fa 13px, #a09788 16px, transparent 16px) 0 0 / 74% 30px repeat-y;
   filter: drop-shadow(2px 0 3px rgba(0, 0, 0, .6));
 }
 /* o pó de giz acumulado no pé do quadro */
@@ -961,7 +961,7 @@ html.fase-giz .giz__data { animation: escreve .5s linear 1.6s forwards; }
   transform: rotateY(180deg); border-radius: 22px 0 0 22px;
   background:
     linear-gradient(90deg, transparent calc(100% - 92px), rgba(242, 176, 30, .55) calc(100% - 92px), rgba(242, 176, 30, .55) calc(100% - 90px), transparent calc(100% - 90px)),
-    repeating-linear-gradient(180deg, transparent 0 33px, rgba(16, 48, 122, .2) 33px 34px),
+    repeating-linear-gradient(180deg, transparent 0 33px, rgba(49, 47, 42, .2) 33px 34px),
     #f4f1e8;
 }
 
@@ -1070,14 +1070,14 @@ html.fase-bordado .leao__halo { animation: halo-acende 1.4s var(--ease) .9s both
   position: absolute; left: 6%; right: 6%; bottom: 0; height: 66%; border-radius: 6px 6px 14px 14px;
   background:
     linear-gradient(90deg, transparent 43%, #ffd36b 43%, #f2b01e 50%, #c98f0c 57%, transparent 57%),
-    linear-gradient(160deg, #15357c, #0a2356 55%, #061430);
+    linear-gradient(160deg, #36332e, #23211e 55%, #141311);
   box-shadow: 0 30px 60px rgba(0, 0, 0, .55), inset 0 -12px 24px rgba(0, 0, 0, .35);
 }
 .presente__tampa {
   position: absolute; left: 0; right: 0; top: 22%; height: 18%; z-index: 2; border-radius: 8px;
   background:
     linear-gradient(90deg, transparent 42%, #ffe39a 42%, #f2b01e 50%, #c98f0c 58%, transparent 58%),
-    linear-gradient(180deg, #1c4396, #0d2a68);
+    linear-gradient(180deg, #44403a, #2b2824);
   box-shadow: 0 10px 18px rgba(0, 0, 0, .45);
   transform-origin: 50% 100%;
   animation: tampa-balanca 4.5s ease-in-out infinite;
@@ -1113,7 +1113,7 @@ html.fase-bordado .leao__halo { animation: halo-acende 1.4s var(--ease) .9s both
 .presente__caixa:hover .presente__brilho { animation: none; opacity: 1; transition: opacity .3s; }
 .presente__etiqueta {
   position: absolute; right: -4%; bottom: 14%; padding: .55rem .8rem; border-radius: 6px;
-  background: #fbf6e9; color: #0a2356; font-size: .72rem; font-weight: 700; line-height: 1.25; text-align: center;
+  background: #fbf6e9; color: #23211e; font-size: .72rem; font-weight: 700; line-height: 1.25; text-align: center;
   box-shadow: 0 8px 16px rgba(0, 0, 0, .4); transform: rotate(8deg);
 }
 .presente__etiqueta b { font-family: var(--display); font-weight: 900; font-size: .95rem; }
