@@ -1,10 +1,10 @@
-# Black Friday Colégio CPPEM — página de captura
+# Dia D Colégio CPPEM 2026 — página de captura
 
-Landing da Black Friday do **Colégio CPPEM**: evento **presencial**, **sábado, 14/11, às 7h30, na sede atual do Colégio** ([mapa](https://maps.app.goo.gl/odR2oX7seDM6c2yY6)).
+Landing do **Dia D 2026** do **Colégio CPPEM**: evento **presencial**, **sábado, 14/11, às 7h30, na sede atual do Colégio** ([mapa](https://maps.app.goo.gl/odR2oX7seDM6c2yY6)).
 A página capta a **lista VIP** (responsável, WhatsApp, e-mail) e leva o inscrito ao grupo do WhatsApp.
 
-Mesma base técnica da Black Friday de concursos (`../blackFridayCPPEM`), com a identidade do Colégio:
-preto e dourado (brasão preto e ouro), dourado `#f2b01e` no FRIDAY e nos botões, Nunito + Nunito Sans,
+Mesma base técnica da página de concursos (`../blackFridayCPPEM`), com a identidade do Colégio:
+preto e dourado (brasão preto e ouro), dourado `#f2b01e` no 2026 e nos botões, Nunito + Nunito Sans,
 brasão no centro do hero. Tom escolar: sem os efeitos táticos da página de concursos.
 
 ## Antes de publicar
@@ -12,13 +12,13 @@ brasão no centro do hero. Tom escolar: sem os efeitos táticos da página de co
 | O quê | Onde |
 |---|---|
 | Link do local (Google Maps) | links `data-mapa` no `index.html` e `agenda()` no `script.js` |
-| Aba da planilha (hoje `BLACK_FRIDAY_COLEGIO`, criada sozinha pelo Apps Script) | `CONFIG.sheetAba` |
+| Aba da planilha (hoje `DIA_D_COLEGIO`, criada sozinha pelo Apps Script) | `CONFIG.sheetAba` |
 | Texto da caixa-presente (a surpresa do evento) | seção `#presente` |
 | `og:image` 1200×630 com URL absoluta | `<head>` do `index.html` |
 
 ## Comportamento
 
-- **Abertura** (uma vez por sessão): letras do BLACK caem, FRIDAY dourado sobe com um risco de luz e o
+- **Abertura** (uma vez por sessão): letras do DIA D caem, 2026 dourado sobe com um risco de luz e o
   brasão aparece por um círculo de luz. `?abertura=0` pula, `?abertura=1` força.
 - **Fases automáticas** a partir de `CONFIG.inicio`: antes / ao vivo / depois (`data-fase-so`).
 - **Brasas douradas** subindo pela página (`#brasas`), em pouca quantidade.
