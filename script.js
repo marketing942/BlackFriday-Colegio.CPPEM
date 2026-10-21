@@ -1,5 +1,5 @@
 /* =========================================================
-   COLÉGIO CPPEM · BLACK FRIDAY — evento presencial 14/11 às 7h30, na sede
+   COLÉGIO CPPEM · DIA D 2026 — evento presencial 14/11 às 7h30, na sede
 
    Duas metades:
    1. A CENA — abertura (vidro, raios, explosão), fogo e raios ambientes,
@@ -30,10 +30,10 @@
     /* Mesmo /exec da livepmpe. O ?aba=NOME escolhe a aba e ela é criada se
        não existir (ver ../livepmpe/google-apps-script.js). */
     sheetBase: "https://script.google.com/macros/s/AKfycbxdFplWVSfhTjvyIA7HIWb645xRjGNhBVhTdTf5UMjo0lSpW_A_jCuys0qB4uImKXPQ/exec",
-    sheetAba:  "BLACK_FRIDAY_COLEGIO",
+    sheetAba:  "DIA_D_COLEGIO",
 
     /* Para onde o inscrito vai depois do formulário: o link curto do grupo
-       da Black no WhatsApp. Vazio, ele seria levado para o canal do YouTube. */
+       do Dia D no WhatsApp. Vazio, ele seria levado para o canal do YouTube. */
     grupoWhatsApp: "https://links.cppem.com.br/grupo-bf26-colegio",
 
     /* Opcional: o link do vídeo agendado da live no YouTube. Preenchido, o
@@ -50,8 +50,8 @@
     /* Raios ambientes no hero: desligados no Colégio (tom escolar). */
     raiosAmbiente: false,
 
-    pagina:  "Black Friday Colégio CPPEM 2026",
-    produto: "BLACK FRIDAY COLÉGIO CPPEM 14/11"
+    pagina:  "Dia D Colégio CPPEM 2026",
+    produto: "DIA D COLÉGIO CPPEM 2026 14/11"
   };
 
   var SHEET_URL = CONFIG.sheetBase + "?aba=" + CONFIG.sheetAba;
@@ -137,7 +137,7 @@
   (function agenda() {
     function utc(ms) { return new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); }
 
-    var titulo = "Black Friday Colégio CPPEM · presencial na sede";
+    var titulo = "Dia D Colégio CPPEM 2026 · presencial na sede";
     var link   = "https://maps.app.goo.gl/odR2oX7seDM6c2yY6";
     var desc   = "A melhor condição do ano para a matrícula 2027, revelada na sede do Colégio CPPEM. Como chegar: " + link;
     var fimAgenda = INICIO + 2 * 3600e3;
@@ -149,9 +149,9 @@
       "&location=" + encodeURIComponent(link);
 
     var ics = [
-      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//CPPEM//Black Friday//PT-BR", "CALSCALE:GREGORIAN",
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//CPPEM//Dia D//PT-BR", "CALSCALE:GREGORIAN",
       "BEGIN:VEVENT",
-      "UID:black-friday-colegio-2026@cppem.com.br",
+      "UID:dia-d-colegio-2026@cppem.com.br",
       "DTSTAMP:" + utc(Date.now()),
       "DTSTART:" + utc(INICIO),
       "DTEND:" + utc(fimAgenda),
@@ -159,7 +159,7 @@
       "DESCRIPTION:" + desc,
       "LOCATION:" + link,
       "URL:" + link,
-      "BEGIN:VALARM", "TRIGGER:-PT30M", "ACTION:DISPLAY", "DESCRIPTION:A Black Friday do Colégio CPPEM começa em 30 minutos", "END:VALARM",
+      "BEGIN:VALARM", "TRIGGER:-PT30M", "ACTION:DISPLAY", "DESCRIPTION:O Dia D do Colégio CPPEM começa em 30 minutos", "END:VALARM",
       "END:VEVENT", "END:VCALENDAR"
     ].join("\r\n");
 
@@ -276,7 +276,7 @@
      Três camadas, de baixo para cima:
        #vidro  a tela preta da abertura: trincas e, na explosão, os cacos
        #fogo   chamas no pé do hero, brasas subindo, faíscas e bola de fogo
-       #raios  os raios (impacto do FRIDAY e, depois, os ambientes)
+       #raios  os raios (impacto do 2026 e, depois, os ambientes)
      Um loop só desenha as três, e ele dorme quando o hero sai da tela.
      ========================================================= */
   var hero    = document.getElementById("topo");
@@ -902,7 +902,7 @@
   }
 
   /* A abertura do Colégio:
-       150  a giz: BLACK, FRIDAY, o risco e a data são escritos no quadro
+       150  a giz: DIA D, 2026, o risco e a data são escritos no quadro
       2150  a capa do caderno abre pela espiral
       2700  as letras do título entram por trás da capa
       3150  o brasão é bordado (costura + agulha) e depois se preenche
@@ -931,7 +931,7 @@
   });
 
   if (raiz.classList.contains("is-abertura")) {
-    /* As fontes mudam a medida das palavras: medir o centro do BLACK antes
+    /* As fontes mudam a medida das palavras: medir o centro do DIA D antes
        do Anton carregar poria a trinca no lugar errado. */
     var fontes = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     Promise.race([fontes, new Promise(function (r) { setTimeout(r, 1200); })]).then(function () {
@@ -1137,7 +1137,7 @@
 
       /* 3. Confirma e leva para o grupo. §7.6 — nada de form.reset(). */
       .then(function () {
-        track("inscricao_black_friday", { produto: CONFIG.produto });
+        track("inscricao_dia_d", { produto: CONFIG.produto });
 
         var successEl = document.getElementById("form-success");
         if (successEl) {
