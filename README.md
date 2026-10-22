@@ -20,7 +20,6 @@ brasão no centro do hero. Tom escolar: sem os efeitos táticos da página de co
 - **Abertura** (uma vez por sessão): letras do DIA D caem, 2026 dourado sobe com um risco de luz e o
   brasão aparece por um círculo de luz. `?abertura=0` pula, `?abertura=1` força.
 - **Fases automáticas** a partir de `CONFIG.inicio`: antes / ao vivo / depois (`data-fase-so`).
-- **Brasas douradas** subindo pela página (`#brasas`), em pouca quantidade.
 - **Prova**: comentários reais de famílias em `assets/prova/`, convertidos em "tinta" e impressos em
   bilhetes de papel rasgado (ouro e branco). Os prints em modo claro (fundo branco) são processados
   invertidos, para a tinta sair igual aos de modo escuro.

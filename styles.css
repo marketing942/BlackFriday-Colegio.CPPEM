@@ -558,11 +558,6 @@ html.is-pulado .anim { animation: sobe .75s var(--freada) both; }
   to   { opacity: 1; transform: none; }
 }
 
-/* ===================== BRASAS =====================
-   Canvas fixo por cima da página inteira, sem receber clique. Poucas
-   brasas (ver script.js) e em "screen": só clareiam, nunca tampam texto. */
-.brasas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 90; pointer-events: none; mix-blend-mode: screen; }
-
 /* ===================== FITAS ===================== */
 .fitas { position: relative; height: 112px; overflow: hidden; background: var(--ink); z-index: 2; }
 .fita {
