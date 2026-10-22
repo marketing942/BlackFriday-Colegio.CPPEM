@@ -139,7 +139,7 @@
 
     var titulo = "Dia D Colégio CPPEM 2026 · presencial na sede";
     var link   = "https://maps.app.goo.gl/odR2oX7seDM6c2yY6";
-    var desc   = "A melhor condição do ano para a matrícula 2027, revelada na sede do Colégio CPPEM. Como chegar: " + link;
+    var desc   = "A melhor condição do ano para a matrícula 2027: matrícula por R$ 397 (ou 12x R$ 41,42), bolsa de 50% e bônus para os primeiros, na sede do Colégio CPPEM. Como chegar: " + link;
     var fimAgenda = INICIO + 2 * 3600e3;
 
     var google = "https://calendar.google.com/calendar/render?action=TEMPLATE" +

@@ -13,7 +13,6 @@ brasão no centro do hero. Tom escolar: sem os efeitos táticos da página de co
 |---|---|
 | Link do local (Google Maps) | links `data-mapa` no `index.html` e `agenda()` no `script.js` |
 | Aba da planilha (hoje `DIA_D_COLEGIO`, criada sozinha pelo Apps Script) | `CONFIG.sheetAba` |
-| Texto da caixa-presente (a surpresa do evento) | seção `#presente` |
 | `og:image` 1200×630 com URL absoluta | `<head>` do `index.html` |
 
 ## Comportamento
